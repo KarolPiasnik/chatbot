@@ -3,31 +3,33 @@ version: "3.0"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
+  - request_menu
+  - request_hours
+  - place_order
   - bot_challenge
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey!"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  action_menu:
+  - text: "here's menu"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  action_opening_hours:
+  - text: "Show opening hours"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_place_order:
+  - text: "Great, plese place your order!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Bye, and see you again!"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_opening_hours
+  - action_menu
 
 session_config:
   session_expiration_time: 60

@@ -30,58 +30,37 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
+- intent: request_menu
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Could you give me menu?
+    - Show me menu
+    - Give me menu
+    - Menu
+    - What is in the menu?
+    - What ca I eat?
+    - What dishes do you have?
+    - What can I eat?
+    - Show food
+    - Show menu
 
-- intent: deny
+- intent: request_hours
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - What are opening hours?
+    - Hours
+    - Opening hours
+    - Show me opening hours
+    - When are you open?
+    - On which days are you open?
+    - Open
+    - When open?
 
-- intent: mood_great
+- intent: place_order
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - I want to order
+    - Here is my order
+    - I want to place an order
+    - Order:
+    - This is what i want
 
 - intent: bot_challenge
   examples: |

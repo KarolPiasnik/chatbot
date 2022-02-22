@@ -6,25 +6,53 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
 
-- story: sad path 1
+- story: ask for hours
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: request_hours
+  - action: action_opening_hours
+  - intent: goodbye
+  - action: utter_goodbye
 
-- story: sad path 2
+- story: ask for hours direct
+  steps:
+  - intent: request_hours
+  - action: action_opening_hours
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ask for menu
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: request_menu
+  - action: action_menu
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ask for menu direct
+  steps:
+  - intent: request_menu
+  - action: action_menu
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: place order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: place_order
+  - action: utter_place_order
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: place order direct
+  steps:
+  - intent: place_order
+  - action: utter_place_order
+  - intent: goodbye
   - action: utter_goodbye
