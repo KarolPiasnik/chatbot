@@ -56,3 +56,19 @@ stories:
   - action: utter_place_order
   - intent: goodbye
   - action: utter_goodbye
+
+- story: ask for hours on weekday
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: opening_hours_on_day
+  - action: action_hours_for_day
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: ask for hours on weekday direct
+  steps:
+  - intent: opening_hours_on_day
+  - action: action_hours_for_day
+  - intent: goodbye
+  - action: utter_goodbye

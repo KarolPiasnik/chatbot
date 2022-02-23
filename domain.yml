@@ -7,16 +7,11 @@ intents:
   - request_hours
   - place_order
   - bot_challenge
+  - opening_hours_on_day
 
 responses:
   utter_greet:
   - text: "Hey!"
-
-  action_menu:
-  - text: "here's menu"
-
-  action_opening_hours:
-  - text: "Show opening hours"
 
   utter_place_order:
   - text: "Great, plese place your order!"
@@ -27,9 +22,13 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+entities:
+  - weekday
+
 actions:
   - action_opening_hours
   - action_menu
+  - action_hours_for_day
 
 session_config:
   session_expiration_time: 60

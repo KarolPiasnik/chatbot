@@ -54,6 +54,12 @@ nlu:
     - Open
     - When open?
 
+- intent: ask_if_open
+  examples: |
+    - Is restaurant open at ?
+    - Are you open?
+    - Is this date within your opening hours?
+
 - intent: place_order
   examples: |
     - I want to order
@@ -62,9 +68,12 @@ nlu:
     - Order:
     - This is what i want
 
-- intent: bot_challenge
+- intent: opening_hours_on_day
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - When are you open on [monday](weekday)?
+    - Are you open on [tuesday](weekday)?
+    - What are opening hours on[wednesday](weekday)?
+    - Open on [thursday](weekday)?
+    - Is restaurant open on [friday](weekday)?
+    - Can i come on [saturday](weekday)?
+    - Do you work on [sunday](weekday)?

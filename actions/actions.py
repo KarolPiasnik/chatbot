@@ -62,7 +62,25 @@ class ActionOpeningHours(Action):
         result += "Opening hours are as below:\n"
 
         for i in data["items"]:
-            result += i + ": " + str(data["items"][i]["open"]) + ":00 - " + str(data["items"][i]["open"])+":00\n"
+            result += i + ": " + str(data["items"][i]["open"]) + ":00 - " + str(data["items"][i]["close"])+":00\n"
         dispatcher.utter_message(text=result)
 
+        return []
+
+class ActionOpeningHoursForDay(Action):
+    
+    def name(self) -> Text:
+        return "action_hours_for_day"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        f = open("data/opening_hours.json")
+        data = json.load(f)
+        for blob in tracker.latest_message['entities']:
+            if blob['entity'] == 'weekday':
+                weekday = blob['value']
+                for i in data["items"]:
+                    if i.lower() == weekday:
+                        dispatcher.utter_message(text=f"Bussiness hours on {weekday}: " + str(data["items"][i]["open"]) + ":00 - " + str(data["items"][i]["close"])+":00\n")
         return []
